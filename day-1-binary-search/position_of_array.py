@@ -25,11 +25,14 @@ def position_of_array(primes,target):
     left = 0
     right = len(primes) -1
     
+    guess = 0
+    
     while left<=right:
         mid = (left+right) // 2
+        guess = guess + 1
         
         if primes[mid] == target:
-            return mid
+            return guess
         elif primes[mid] < target:
             left = mid + 1
         elif primes[mid] > target:
@@ -38,7 +41,7 @@ def position_of_array(primes,target):
         return -1 
     
 primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]
-target = 99
+target = 59
 
 print(position_of_array(primes,target))
     
